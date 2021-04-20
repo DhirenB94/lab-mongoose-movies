@@ -8,6 +8,10 @@ const hbs          = require('hbs');
 const mongoose     = require('mongoose');
 const logger       = require('morgan');
 const path         = require('path');
+const helpers      =require('handlebars-helpers')
+
+//making handlebars-helpers available in our views
+hbs.registerHelper(helpers())
 
 
 mongoose
@@ -39,7 +43,7 @@ app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
 
 
 // default value for title local
-app.locals.title = 'Express - Generated with IronGenerator';
+app.locals.title = 'Celebrities-information'
 
 
 
@@ -48,6 +52,9 @@ app.use('/', index);
 
 const celebrityRoutes = require('./routes/celebrities');
 app.use('/', celebrityRoutes);
+
+const movie = require('./routes/movie')
+app.use('/', movie)
 
 
 

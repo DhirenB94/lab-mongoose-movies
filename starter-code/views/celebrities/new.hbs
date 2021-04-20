@@ -7,6 +7,13 @@
     <label>Occupation</label>
     <input type="text" name="occupation">
     
+     <select name="movie">
+      <option value="">Choose a movie</option>
+    {{#each allMovies}}
+      <option value={{id}}>{{title}}</option>
+    {{/each}}
+  </select>
+
     <label>Catch Phrase</label>
     <input type="text" name="catchPhrase">
 

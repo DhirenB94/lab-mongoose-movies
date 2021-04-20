@@ -6,6 +6,20 @@
 
   <label>Occupation</label>
   <input type="text" name="occupation" value="{{celeb.occupation}}">
+  
+  <label>Movie</label>
+    <select name="movie">
+      <option value="">Choose movie</option>
+    {{#each allMovies}}
+        {{!-- name is the name of the author --}}
+         {{!-- book.author.name is the name of the book author --}}
+        {{#eq title ../celebrity.movie.title}}
+            <option value={{id}} selected>{{title}}</option>
+          {{else}}
+            <option value={{id}}>{{title}}</option>
+        {{/eq}}
+    {{/each}}
+  </select>
 
 
   <label>Catch Phrase</label>
